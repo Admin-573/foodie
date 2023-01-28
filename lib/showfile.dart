@@ -2,22 +2,23 @@ import 'package:flutter/material.dart';
 
 import 'buy.dart';
 
-class details extends StatefulWidget {
+// ignore: must_be_immutable
+class Details extends StatefulWidget {
 
   Map data = {};
-  details(this.data);
+  Details(this.data, {super.key});
 
   @override
-  State<details> createState() => _detailsState();
+  State<Details> createState() => _DetailsState();
 }
 
-class _detailsState extends State<details> {
+class _DetailsState extends State<Details> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.deepOrange,
-        title: Text("Want To Buy ?"),
+        title: const Text("Want To Buy ?"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
@@ -39,10 +40,10 @@ class _detailsState extends State<details> {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 widget.data['name'],
-                style: TextStyle(fontSize: 30),
+                style: const TextStyle(fontSize: 30),
               ),
             ),
-            Divider(
+            const Divider(
               height: 4,
               thickness: 4,
               color: Colors.deepOrange,
@@ -51,15 +52,15 @@ class _detailsState extends State<details> {
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 widget.data['des'],
-                style: TextStyle(fontSize: 18),
+                style: const TextStyle(fontSize: 18),
               ),
             ),
 
-            SizedBox(height: 25),
+            const SizedBox(height: 25),
 
             ElevatedButton(onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=> buyit()));
-            }, child: Text('Buy',style: TextStyle(fontWeight: FontWeight.w900),))
+            }, child: const Text('Buy',style: TextStyle(fontWeight: FontWeight.w900),))
           ],
         ),
       ),

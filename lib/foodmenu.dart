@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:foodie/showfile.dart';
 
+// ignore: camel_case_types
 class fooditems extends StatefulWidget {
-  fooditems({Key? key}) : super(key: key);
+  const fooditems({Key? key}) : super(key: key);
 
   @override
   State<fooditems> createState() => _fooditemsState();
 }
 
+// ignore: camel_case_types
 class _fooditemsState extends State<fooditems> {
   List<Map> data = [
 
@@ -60,17 +62,17 @@ class _fooditemsState extends State<fooditems> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.deepOrange,
-        title: Text("Our Hot Items"),
+        title: const Text("Our Hot Items"),
         centerTitle: true,
       ),
       body: GridView.builder(
         itemCount: data.length,
         gridDelegate:
-        SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemBuilder: (context, index) =>
             GestureDetector(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => details(data[index]),),);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Details(data[index]),),);
               },
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -89,7 +91,7 @@ class _fooditemsState extends State<fooditems> {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text(data[index]["name"],style: TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.w900)),
+                      child: Text(data[index]["name"],style: const TextStyle(fontSize: 20,color: Colors.white,fontWeight: FontWeight.w900)),
                     )
                   ],
                 ),
