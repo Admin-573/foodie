@@ -30,7 +30,7 @@ class _HomeState extends State<Home> {
     return Form(
       key: _formKey,
       child: Material(
-        color: Colors.white,
+        color: Colors.deepOrange[100],
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -40,7 +40,7 @@ class _HomeState extends State<Home> {
               width: 256,
               alignment: Alignment.topCenter),
 
-              const Image(image: AssetImage('assets/welcome.jpeg'),
+              const Image(image: AssetImage('assets/welcome.png'),
               fit: BoxFit.cover,
               width: 256,),
 
@@ -152,16 +152,23 @@ class _HomeState extends State<Home> {
                 ),
               ),
 
-              const SizedBox(height: 30),
+              const SizedBox(height: 20),
+
+              const Image(image: AssetImage('assets/des.png'),
+                fit: BoxFit.cover,
+                width: 320,),
+
+              const SizedBox(height: 70),
 
               ElevatedButton(onPressed: (){
                 if(_formKey.currentState!.validate()) {
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>const fooditems()));
                 }
               },
-                  child: const Text('LogIn')),
-
-              const SizedBox(height: 30)
+                  child: const Text('LogIn',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w900)
+                  )
+              ),
+              const SizedBox(height: 50)
             ],
           ),
         ),

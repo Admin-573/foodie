@@ -15,6 +15,7 @@ class _DetailsState extends State<Details> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.pink[50],
       appBar: AppBar(
         backgroundColor: Colors.deepOrange[100],
         title: const Text("Want To Buy ?",style: TextStyle(color: Colors.deepOrange,fontWeight: FontWeight.w900),),
@@ -27,28 +28,32 @@ class _DetailsState extends State<Details> {
 
             Divider(height: 25,
             thickness: 10,
-            color: Colors.redAccent[200],),
+            color: Colors.redAccent[200],
+            indent: 0,
+            endIndent: 40,),
 
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 widget.data['name'],
-                style: const TextStyle(fontWeight: FontWeight.w900,fontSize: 30),
+                style: const TextStyle(fontFamily: 'DancingScript',fontWeight: FontWeight.w900,fontSize: 40),
               ),
             ),
 
             Divider(height: 25,
               thickness: 10,
-              color: Colors.redAccent[200],),
+              color: Colors.redAccent[200],
+            indent: 40,
+            endIndent: 0,),
 
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
-                width: 512,
+                width: 280,
                 height: 256,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: NetworkImage(widget.data['image']),
+                      image: AssetImage(widget.data['image']),
                       fit: BoxFit.fill),
                 ),
               ),
@@ -58,18 +63,23 @@ class _DetailsState extends State<Details> {
               height: 25,
               thickness: 10,
               color: Colors.deepOrange[300],
+              indent: 0,
+              endIndent: 40,
             ),
+
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
                 widget.data['des'],
-                style: const TextStyle(fontSize: 24,fontFamily: 'DancingScript',fontWeight: FontWeight.w900),
+                style: const TextStyle(fontSize: 28,fontFamily: 'DancingScript',fontWeight: FontWeight.w900),
               ),
             ),
 
             Divider(height: 25,
             thickness: 10,
             color: Colors.deepOrange[300],
+              indent: 40,
+              endIndent: 0,
             ),
 
             const SizedBox(height: 25),
