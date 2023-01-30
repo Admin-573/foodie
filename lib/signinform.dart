@@ -79,30 +79,34 @@ class _signinState extends State<signin> {
               ),
 
 
-              const SizedBox(height: 30),
+              const SizedBox(height: 50),
 
               ElevatedButton(onPressed: (){
                 if(_formKey.currentState!.validate()) {
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>const fooditems()));
                 }
               },
-                  child: const Text('SignIn',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w900)
+                  child: const Text('SignIn',style: TextStyle(
+                      fontFamily: 'DancingScript',
+                      fontSize: 24,fontWeight: FontWeight.w900)
                   )
               ),
 
-              const SizedBox(height: 70),
+              const SizedBox(height: 100),
 
               const Text('New Customer ?',style: TextStyle(fontWeight: FontWeight.w900,
+                  fontFamily: 'DancingScript',
                   color: Colors.deepOrange,
-                  fontSize: 28),),
+                  fontSize: 36),),
 
-              const SizedBox(height: 25,),
+              const SizedBox(height: 10,),
 
               ElevatedButton(onPressed: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>const Home()));
               },
                 child:const Text('SignUp',style: TextStyle(
-                  fontSize: 18,fontWeight: FontWeight.w900,),
+                  fontFamily: 'DancingScript',
+                  fontSize: 24,fontWeight: FontWeight.w900,),
                 ),
               ),
 

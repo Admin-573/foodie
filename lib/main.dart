@@ -160,15 +160,19 @@ class _HomeState extends State<Home> {
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>const fooditems()));
                 }
               },
-                  child: const Text('SignUp',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w900)
+                  child: const Text('SignUp',style: TextStyle(fontSize: 24,
+                      fontWeight: FontWeight.w900,
+                    fontFamily: 'DancingScript',
+                  )
                   )
               ),
 
               const SizedBox(height: 70),
 
               const Text('Already A Customer ? ',style: TextStyle(fontWeight: FontWeight.w900,
+                  fontFamily: 'DancingScript',
                   color: Colors.deepOrange,
-                  fontSize: 28),),
+                  fontSize: 36),),
 
               const SizedBox(height: 25,),
 
@@ -176,7 +180,8 @@ class _HomeState extends State<Home> {
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>const signin()));
               },
                   child:const Text('SignIn',style: TextStyle(
-                    fontSize: 18,fontWeight: FontWeight.w900,),
+                    fontFamily: 'DancingScript',
+                    fontSize: 24,fontWeight: FontWeight.w900,),
                   ),
               ),
 
