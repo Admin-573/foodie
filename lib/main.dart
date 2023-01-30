@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:foodie/foodmenu.dart';
+import 'package:foodie/signinform.dart';
 
 void main() {
   runApp(const MaterialApp(
@@ -51,7 +52,7 @@ class _HomeState extends State<Home> {
                 child: TextFormField(
                   decoration: const InputDecoration(
                     icon: Icon(Icons.person),
-                    hintText: "Enter User Name",
+                    hintText: "Create User Name",
                     labelText: "UserName"
                   ),
                   validator: (value){
@@ -73,7 +74,7 @@ class _HomeState extends State<Home> {
                   obscureText: true,
                   decoration: const InputDecoration(
                       icon: Icon(Icons.lock),
-                      hintText: "Enter Password",
+                      hintText: "Create Strong Password",
                       labelText: "Password"
                   ),
                   validator: (value){
@@ -152,23 +153,35 @@ class _HomeState extends State<Home> {
                 ),
               ),
 
-              const SizedBox(height: 20),
-
-              const Image(image: AssetImage('assets/des.png'),
-                fit: BoxFit.cover,
-                width: 320,),
-
-              const SizedBox(height: 70),
+              const SizedBox(height: 30),
 
               ElevatedButton(onPressed: (){
                 if(_formKey.currentState!.validate()) {
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>const fooditems()));
                 }
               },
-                  child: const Text('LogIn',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w900)
+                  child: const Text('SignUp',style: TextStyle(fontSize: 18,fontWeight: FontWeight.w900)
                   )
               ),
+
+              const SizedBox(height: 70),
+
+              const Text('Already A Customer ? ',style: TextStyle(fontWeight: FontWeight.w900,
+                  color: Colors.deepOrange,
+                  fontSize: 28),),
+
+              const SizedBox(height: 25,),
+
+              ElevatedButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const signin()));
+              },
+                  child:const Text('SignIn',style: TextStyle(
+                    fontSize: 18,fontWeight: FontWeight.w900,),
+                  ),
+              ),
+
               const SizedBox(height: 50)
+
             ],
           ),
         ),
